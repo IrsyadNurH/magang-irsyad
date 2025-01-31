@@ -28,12 +28,14 @@ Pastikan Anda memiliki prasyarat berikut sebelum melanjutkan:
    npm start
 
 ================================================
-Bila ingin menghubungkan ke databasenya 
-1.nyalakan dulu dockernya
-2.sambungkan koneksi ke dbeaver [tambahkan server postgres] cek datanya di .env
+## Bila ingin menghubungkan ke databasenya
+
+1. nyalakan dulu dockernya
+2. sambungkan koneksi ke dbeaver [tambahkan server postgres] cek datanya di .env
 
 Struktur nya
 
+```
 admin-backend/
 ├── src/
 │   ├── config/
@@ -56,7 +58,7 @@ admin-backend/
 ├── .env
 ├── tsconfig.json
 ├── package.json
-
+```
    
 
    
