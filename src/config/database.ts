@@ -1,9 +1,9 @@
-import { Client } from 'pg';
+import { Pool } from 'pg';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const client = new Client({
+const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
@@ -11,7 +11,7 @@ const client = new Client({
   port: parseInt(process.env.DB_PORT || '5432'),
 });
 
-client.connect()
+pool.connect()
   .then(() => {
     console.log("Connected to the database");
   })
@@ -19,6 +19,4 @@ client.connect()
     console.error("Failed to connect to database:", err.message);
   });
 
-// Pastikan menggunakan ekspor default
-export default client;
-
+export default pool;
