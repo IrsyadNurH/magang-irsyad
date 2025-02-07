@@ -31,7 +31,8 @@ router.put('/testimonial/:id', async (req, res) => {
       req.body
     );
     if (!updatedTestimonial) {
-      return res.status(404).json({ error: 'Testimonial not found' });
+       res.status(404).json({ error: 'Testimonial not found' });
+       return;
     }
     res.json(updatedTestimonial);
   } catch (err) {
@@ -44,7 +45,8 @@ router.delete('/testimonial/:id', async (req, res) => {
   try {
     const deleted = await TestimonialModel.delete(parseInt(req.params.id));
     if (!deleted) {
-      return res.status(404).json({ error: 'Testimonial not found' });
+       res.status(404).json({ error: 'Testimonial not found' });
+       return;
     }
     res.json({ message: 'Testimonial deleted successfully' });
   } catch (err) {
